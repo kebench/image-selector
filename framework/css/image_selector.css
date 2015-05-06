@@ -8,8 +8,6 @@ body{
 
 .img-thumbnail img{
 	width: 100%;
-	cursor: hand;
-	cursor: pointer;
 }
 
 .img-wrapper{
@@ -19,8 +17,4 @@ body{
 #images{
 	overflow-x: hidden;
 	max-height: 500px;
-}
-
-.img-selected{
-	background-color: #0099FB;
 }
