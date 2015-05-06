@@ -14,15 +14,13 @@ jQuery(document).ready(function(){
 		});
 	});
 	
-	/*jQuery(function(){
-		jQuery("body").on("change", "#files", function(){
+	jQuery(function(){
+		/*jQuery("body").on("change", "#files", function(){
 			var file = jQuery(this).val();
 			var folder = jQuery("#image_folder").val();
 			jQuery("#show-preview img").attr('src', URL.siteurl + '/wp-content/uploads/'+jQuery("#image-folder").val()+'/'+ folder +'/' + file);
-		});
-	});*/
-	
-	jQuery(function(){
+		});*/
+		
 		jQuery("#images .img-thumbnail img").click(
 			jQuery(this).parent().addClass("img-selected");
 		);

@@ -146,8 +146,9 @@ class imageSelector{
 			$image_filename = $_POST['files'];
 			$check_if_uploaded=false;
 			$attach_id;
-		
+			//check if there is a filename submitted.
 			if(isset($_POST['files'])){
+				//Check if file is already attached to a post
 				$args= array(
 					'post_type' => 'attachment',
 					'status' => 'inherit',
@@ -155,7 +156,7 @@ class imageSelector{
 				);
 		
 				$images = get_posts($args);
-			
+				
 				foreach( $images as $image){
 					if($image->post_title == preg_replace( '/\.[^.]+$/', '', $image_filename )){
 						$check_if_uploaded = true;
