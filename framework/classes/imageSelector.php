@@ -120,7 +120,7 @@ class imageSelector{
 		$stored_meta_file = $this->getPostMeta($post->ID,'image_file');
 		$out = $this->get_directories( $stored_meta_folder, $post->ID );
 		$out .= "<input type='hidden' id='image-folder' value='".self::$imageFolder."'/>";
-		$out .= "<input type='hidden' id='image-file' name='image-file' value=''/>";
+		$out .= "<input type='hidden' id='image-file' name='files' value=''/>";
 		$out .= "<div id='file-wrap'>";
 		$out .= ( !empty($stored_meta_file) ) ? self::get_files( $stored_meta_folder, $stored_meta_file ) : "";
 		$out .= "</div>";
@@ -213,7 +213,9 @@ class imageSelector{
 				
 				foreach( $filesArray as $key => $val ){
 					$out .= "<div class='col-md-3 img-wrapper'>";
-					$out .= "<div class='img-thumbnail'>";
+					$out .= "<div class='img-thumbnail ";
+					$out .= ( $fileName == $key  ) ? "img-selected" : "";
+					$out .= "'>";
 					$out .= "<img src=\"{$upload['baseurl']}/".self::$imageFolder."/{$folder}/{$key}\" data-filename='{$key}'/>" ;
 					$out .= "</div>";
 					$out .= "</div>";
